@@ -306,14 +306,6 @@ export default function FeedbackForm() {
             <div className="min-h-screen bg-transparent text-gray-900 p-4 pt-24 md:p-8 md:pt-32 flex items-start justify-center">
                 <div ref={wrapperRef} className="max-w-4xl w-full">
                     <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-center border border-gray-200/50 animate-[fadeInUp_0.5s_ease-out]">
-                        <div className="mb-8 flex justify-center">
-                            <img
-                                src="/logo.svg"
-                                alt="Logo"
-                                className="h-32 md:h-48 w-auto"
-                            />
-                        </div>
-                        
                         <div className="mb-6">
                             <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-ignite-green/20 mb-6">
                                 <svg className="h-10 w-10 text-ignite-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -361,15 +353,6 @@ export default function FeedbackForm() {
                 <div className="relative bg-ignite-gray/80 backdrop-blur-sm px-4 pb-6 pt-4 md:px-12 md:pb-12 md:pt-6 md:rounded-2xl md:shadow-2xl md:border border-gray-200/50 animate-fade-in-up">
                     {/* Header */}
                     <div className="text-center mb-6 pb-4 border-b border-gray-200/50">
-                        {/* Logo */}
-                        <div className="flex justify-center mb-4">
-                            <img
-                                src="/logo.svg"
-                                alt="Logo"
-                                className="h-32 md:h-48 w-auto"
-                            />
-                        </div>
-
                         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 tracking-tight">
                             Feedback Form
                         </h1>
