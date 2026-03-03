@@ -5,8 +5,8 @@ import { supabase } from '../utils/supabaseClient';
 
 const InputField = ({ label, name, type = 'text', required = false, value, onChange, isFocused, onFocus, onBlur }) => (
     <div className="w-full group">
-        <label className={`block text-sm font-semibold mb-2 transition-colors duration-200 ${isFocused ? 'text-xynexis-green' : 'text-gray-400'}`}>
-            {label} {required && <span className="text-xynexis-green">*</span>}
+        <label className={`block text-sm font-semibold mb-2 transition-colors duration-200 ${isFocused ? 'text-ignite-green' : 'text-gray-600'}`}>
+            {label} {required && <span className="text-ignite-green">*</span>}
         </label>
         <input
             type={type}
@@ -15,9 +15,9 @@ const InputField = ({ label, name, type = 'text', required = false, value, onCha
             onChange={onChange}
             onFocus={onFocus}
             onBlur={onBlur}
-            className="w-full px-4 py-3.5 rounded-lg bg-[#1a1e28] border border-gray-700 text-white placeholder-gray-500 
-                 focus:outline-none focus:border-xynexis-green focus:ring-2 focus:ring-xynexis-green/20 
-                 transition-all duration-300 hover:border-gray-600 shadow-sm"
+            className="w-full px-4 py-3.5 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-500 
+                 focus:outline-none focus:border-ignite-green focus:ring-2 focus:ring-ignite-green/20 
+                 transition-all duration-300 hover:border-gray-300 shadow-sm"
             required={required}
         />
     </div>
@@ -25,8 +25,8 @@ const InputField = ({ label, name, type = 'text', required = false, value, onCha
 
 const SelectGroup = ({ label, name, options, value, onChange, isFocused, onFocus, onBlur, required = false }) => (
     <div className="w-full group">
-        <label className={`block text-sm font-semibold mb-2 transition-colors duration-200 ${isFocused ? 'text-xynexis-green' : 'text-gray-400'}`}>
-            {label} {required && <span className="text-xynexis-green">*</span>}
+        <label className={`block text-sm font-semibold mb-2 transition-colors duration-200 ${isFocused ? 'text-ignite-green' : 'text-gray-600'}`}>
+            {label} {required && <span className="text-ignite-green">*</span>}
         </label>
         <div className="relative">
             <select
@@ -35,19 +35,19 @@ const SelectGroup = ({ label, name, options, value, onChange, isFocused, onFocus
                 onChange={onChange}
                 onFocus={onFocus}
                 onBlur={onBlur}
-                className="w-full px-4 py-3.5 rounded-lg bg-[#1a1e28] border border-gray-700 text-white 
-                   focus:outline-none focus:border-xynexis-green focus:ring-2 focus:ring-xynexis-green/20 
-                   transition-all duration-300 appearance-none cursor-pointer hover:border-gray-600 shadow-sm"
+                className="w-full px-4 py-3.5 rounded-lg bg-white border border-gray-200 text-gray-900 
+                   focus:outline-none focus:border-ignite-green focus:ring-2 focus:ring-ignite-green/20 
+                   transition-all duration-300 appearance-none cursor-pointer hover:border-gray-300 shadow-sm"
                 required={required}
             >
                 <option value="" disabled className="text-gray-500">Select an option...</option>
                 {options.map((option) => (
-                    <option key={option} value={option} className="bg-[#1a1e28] text-white">
+                    <option key={option} value={option} className="bg-white text-gray-900">
                         {option}
                     </option>
                 ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-600">
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
@@ -303,9 +303,9 @@ export default function FeedbackForm() {
 
     if (isSubmitted) {
         return (
-            <div className="min-h-screen bg-transparent text-white p-4 pt-24 md:p-8 md:pt-32 flex items-start justify-center">
+            <div className="min-h-screen bg-transparent text-gray-900 p-4 pt-24 md:p-8 md:pt-32 flex items-start justify-center">
                 <div ref={wrapperRef} className="max-w-4xl w-full">
-                    <div className="bg-[#20242F] rounded-2xl shadow-2xl p-8 md:p-12 text-center border border-gray-700/50 animate-[fadeInUp_0.5s_ease-out]">
+                    <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-center border border-gray-200/50 animate-[fadeInUp_0.5s_ease-out]">
                         <div className="mb-8 flex justify-center">
                             <img
                                 src="/logo.svg"
@@ -315,27 +315,27 @@ export default function FeedbackForm() {
                         </div>
                         
                         <div className="mb-6">
-                            <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-xynexis-green/20 mb-6">
-                                <svg className="h-10 w-10 text-xynexis-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-ignite-green/20 mb-6">
+                                <svg className="h-10 w-10 text-ignite-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                                 Thank You!
                             </h2>
-                            <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
+                            <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
                                 Thank you for your participation and for taking the time to join the "Personal Data Protection (PDP) Advance Training". We hope the materials presented provided valuable insights and practical benefits for the implementation of data protection within your organization.
                             </p>
                         </div>
 
                         <div className="mt-10">
-                            <p className="text-gray-400 mb-6">
+                            <p className="text-gray-600 mb-6">
                                 Congratulations! You are entitled to receive the training materials for "Personal Data Protection (PDP) Advance Training", which can be downloaded via the link below.
                             </p>
                             <a
                                 href={downloadToken ? `/api/download-presentation?token=${downloadToken}` : '#'}
                                 target={downloadToken ? "_blank" : "_self"}
-                                className={`inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 transform bg-gradient-to-r from-xynexis-green to-xynexis-green-hover rounded-xl shadow-lg hover:shadow-xynexis-green/20 hover:scale-[1.02] active:scale-[0.98] group ${!downloadToken ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                className={`inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 transform bg-gradient-to-r from-ignite-green to-ignite-green-hover rounded-xl shadow-lg hover:shadow-ignite-green/20 hover:scale-[1.02] active:scale-[0.98] group ${!downloadToken ? 'opacity-50 cursor-not-allowed' : ''}`}
                             >
                                 <svg className="w-6 h-6 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -350,17 +350,17 @@ export default function FeedbackForm() {
     }
 
     return (
-        <div className="min-h-screen bg-transparent text-white p-4 pt-24 md:p-8 md:pt-32 flex items-start justify-center">
+        <div className="min-h-screen bg-transparent text-gray-900 p-4 pt-24 md:p-8 md:pt-32 flex items-start justify-center">
             <div ref={wrapperRef} className="max-w-4xl w-full">
                 {/* Decorative Elements */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-xynexis-green/5 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-xynexis-green/5 rounded-full blur-3xl"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-ignite-green/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-ignite-green/5 rounded-full blur-3xl"></div>
                 </div>
 
-                <div className="relative bg-xynexis-gray/80 backdrop-blur-sm px-4 pb-6 pt-4 md:px-12 md:pb-12 md:pt-6 md:rounded-2xl md:shadow-2xl md:border border-gray-700/50 animate-fade-in-up">
+                <div className="relative bg-ignite-gray/80 backdrop-blur-sm px-4 pb-6 pt-4 md:px-12 md:pb-12 md:pt-6 md:rounded-2xl md:shadow-2xl md:border border-gray-200/50 animate-fade-in-up">
                     {/* Header */}
-                    <div className="text-center mb-6 pb-4 border-b border-gray-700/50">
+                    <div className="text-center mb-6 pb-4 border-b border-gray-200/50">
                         {/* Logo */}
                         <div className="flex justify-center mb-4">
                             <img
@@ -370,21 +370,21 @@ export default function FeedbackForm() {
                             />
                         </div>
 
-                        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+                        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 tracking-tight">
                             Feedback Form
                         </h1>
-                        <div className="text-left mt-6 text-gray-300 space-y-1 text-sm md:text-base border border-gray-700/50 bg-[#1a1e28]/50 p-4 rounded-xl">
-                            <p><span className="font-semibold text-white inline-block w-32">Judul Training</span> : Personal Data Protection (PDP) Advance Training</p>
-                            <p><span className="font-semibold text-white inline-block w-32">Tanggal</span> : Jakarta, 9 Februari 2026</p>
-                            <p><span className="font-semibold text-white inline-block w-32">Klien</span> : PT Perusahaan Gas Negara</p>
+                        <div className="text-left mt-6 text-gray-700 space-y-1 text-sm md:text-base border border-gray-200/50 bg-white/50 p-4 rounded-xl">
+                            <p><span className="font-semibold text-gray-900 inline-block w-32">Judul Training</span> : Personal Data Protection (PDP) Advance Training</p>
+                            <p><span className="font-semibold text-gray-900 inline-block w-32">Tanggal</span> : Jakarta, 9 Februari 2026</p>
+                            <p><span className="font-semibold text-gray-900 inline-block w-32">Klien</span> : PT Perusahaan Gas Negara</p>
                         </div>
                     </div>
 
                     {/* Message Alert */}
                     {message && (
                         <div className={`p-5 mb-8 rounded-xl border flex items-center gap-3 animate-fade-in-up ${message.type === 'success'
-                            ? 'bg-xynexis-green/10 border-xynexis-green/30 text-xynexis-green'
-                            : 'bg-red-500/10 border-red-500/30 text-red-400'
+                            ? 'bg-ignite-green/10 border-ignite-green/30 text-ignite-green'
+                            : 'bg-red-500/10 border-red-500/30 text-red-500'
                             }`}>
                             {message.type === 'success' ? (
                                 <svg className="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -404,8 +404,8 @@ export default function FeedbackForm() {
                         {/* Personal Information Section */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-1 h-8 bg-gradient-to-b from-xynexis-green to-xynexis-green/50 rounded-full"></div>
-                                <h2 className="text-xl font-bold text-white">Personal Information</h2>
+                                <div className="w-1 h-8 bg-gradient-to-b from-ignite-green to-ignite-green/50 rounded-full"></div>
+                                <h2 className="text-xl font-bold text-gray-900">Personal Information</h2>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -463,10 +463,10 @@ export default function FeedbackForm() {
                         </div>
 
                         {/* Experience Section */}
-                        <div className="space-y-6 pt-8 border-t border-gray-700/50">
+                        <div className="space-y-6 pt-8 border-t border-gray-200/50">
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-1 h-8 bg-gradient-to-b from-xynexis-green to-xynexis-green/50 rounded-full"></div>
-                                <h2 className="text-xl font-bold text-white">Training Feedback</h2>
+                                <div className="w-1 h-8 bg-gradient-to-b from-ignite-green to-ignite-green/50 rounded-full"></div>
+                                <h2 className="text-xl font-bold text-gray-900">Training Feedback</h2>
                             </div>
 
                             <SelectGroup
@@ -567,7 +567,7 @@ export default function FeedbackForm() {
                         </div>
 
                         {/* Yes/No Section */}
-                        <div className="space-y-6 pt-8 border-t border-gray-700/50">
+                        <div className="space-y-6 pt-8 border-t border-gray-200/50">
                             <SelectGroup
                                 label="1. Apakah Anda memiliki kebutuhan terkait layanan dan produk yang disampaikan?"
                                 name="yt_kebutuhan_layanan"
@@ -606,9 +606,9 @@ export default function FeedbackForm() {
                         </div>
 
                         {/* Comments Section */}
-                        <div className="space-y-6 pt-8 border-t border-gray-700/50">
+                        <div className="space-y-6 pt-8 border-t border-gray-200/50">
                             <div className="space-y-3">
-                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_kritik_saran' ? 'text-xynexis-green' : 'text-gray-400'}`}>
+                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_kritik_saran' ? 'text-ignite-green' : 'text-gray-600'}`}>
                                     1. Apa kritik dan saran Anda untuk pelaksanaan training yang telah diselenggarakan?
                                 </label>
                                 <textarea
@@ -618,13 +618,13 @@ export default function FeedbackForm() {
                                     onFocus={() => setFocusedField('ur_kritik_saran')}
                                     onBlur={() => setFocusedField(null)}
                                     rows="3"
-                                    className="w-full px-4 py-3.5 rounded-lg bg-[#1a1e28] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-xynexis-green focus:ring-2 focus:ring-xynexis-green/20 transition-all duration-300 resize-none hover:border-gray-600 shadow-sm"
+                                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-ignite-green focus:ring-2 focus:ring-ignite-green/20 transition-all duration-300 resize-none hover:border-gray-300 shadow-sm"
                                     placeholder="Uraian Anda..."
                                 ></textarea>
                             </div>
 
                             <div className="space-y-3">
-                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_hal_baik' ? 'text-xynexis-green' : 'text-gray-400'}`}>
+                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_hal_baik' ? 'text-ignite-green' : 'text-gray-600'}`}>
                                     2. Apa hal yang sudah baik dan perlu dipertahankan dari sesi training ini?
                                 </label>
                                 <textarea
@@ -634,13 +634,13 @@ export default function FeedbackForm() {
                                     onFocus={() => setFocusedField('ur_hal_baik')}
                                     onBlur={() => setFocusedField(null)}
                                     rows="3"
-                                    className="w-full px-4 py-3.5 rounded-lg bg-[#1a1e28] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-xynexis-green focus:ring-2 focus:ring-xynexis-green/20 transition-all duration-300 resize-none hover:border-gray-600 shadow-sm"
+                                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-ignite-green focus:ring-2 focus:ring-ignite-green/20 transition-all duration-300 resize-none hover:border-gray-300 shadow-sm"
                                     placeholder="Uraian Anda..."
                                 ></textarea>
                             </div>
 
                             <div className="space-y-3">
-                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_saran_selanjutnya' ? 'text-xynexis-green' : 'text-gray-400'}`}>
+                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_saran_selanjutnya' ? 'text-ignite-green' : 'text-gray-600'}`}>
                                     3. Apa saran Anda untuk pelaksanaan awareness, workshop atau training selanjutnya?
                                 </label>
                                 <textarea
@@ -650,13 +650,13 @@ export default function FeedbackForm() {
                                     onFocus={() => setFocusedField('ur_saran_selanjutnya')}
                                     onBlur={() => setFocusedField(null)}
                                     rows="3"
-                                    className="w-full px-4 py-3.5 rounded-lg bg-[#1a1e28] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-xynexis-green focus:ring-2 focus:ring-xynexis-green/20 transition-all duration-300 resize-none hover:border-gray-600 shadow-sm"
+                                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-ignite-green focus:ring-2 focus:ring-ignite-green/20 transition-all duration-300 resize-none hover:border-gray-300 shadow-sm"
                                     placeholder="Uraian Anda..."
                                 ></textarea>
                             </div>
 
                             <div className="space-y-3">
-                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_kebutuhan_topik' ? 'text-xynexis-green' : 'text-gray-400'}`}>
+                                <label className={`block text-sm font-semibold transition-colors duration-200 ${focusedField === 'ur_kebutuhan_topik' ? 'text-ignite-green' : 'text-gray-600'}`}>
                                     4. Apa kebutuhan Anda untuk topik awareness, workshop atau training selanjutnya?
                                 </label>
                                 <textarea
@@ -666,7 +666,7 @@ export default function FeedbackForm() {
                                     onFocus={() => setFocusedField('ur_kebutuhan_topik')}
                                     onBlur={() => setFocusedField(null)}
                                     rows="3"
-                                    className="w-full px-4 py-3.5 rounded-lg bg-[#1a1e28] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-xynexis-green focus:ring-2 focus:ring-xynexis-green/20 transition-all duration-300 resize-none hover:border-gray-600 shadow-sm"
+                                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-ignite-green focus:ring-2 focus:ring-ignite-green/20 transition-all duration-300 resize-none hover:border-gray-300 shadow-sm"
                                     placeholder="Uraian Anda..."
                                 ></textarea>
                             </div>
@@ -683,16 +683,16 @@ export default function FeedbackForm() {
                                         onChange={handleChange}
                                         className="peer sr-only"
                                     />
-                                    <div className={`w-5 h-5 rounded border border-gray-600 bg-[#1a1e28] 
-                                    peer-checked:bg-xynexis-green peer-checked:border-xynexis-green 
+                                    <div className={`w-5 h-5 rounded border border-gray-300 bg-white 
+                                    peer-checked:bg-ignite-green peer-checked:border-ignite-green 
                                     transition-all duration-200 shadow-sm group-hover:border-gray-500`}></div>
                                     <svg className="absolute w-3.5 h-3.5 text-white left-0.5 top-0.5 opacity-0 peer-checked:opacity-100 transition-opacity duration-200 pointer-events-none" 
                                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <span className={`text-sm select-none transition-colors duration-200 ${formData.privacy_consent ? 'text-gray-200' : 'text-gray-400'}`}>
-                                    I agree to the <a href="https://xynexis.com/privacy-notice/" target="_blank" rel="noopener noreferrer" className="text-xynexis-green hover:underline">Privacy Notice</a> and consent to having my data processed.
+                                <span className={`text-sm select-none transition-colors duration-200 ${formData.privacy_consent ? 'text-gray-200' : 'text-gray-600'}`}>
+                                    I agree to the <a href="https://xynexis.com/privacy-notice/" target="_blank" rel="noopener noreferrer" className="text-ignite-green hover:underline">Privacy Notice</a> and consent to having my data processed.
                                 </span>
                             </label>
                             {/* Error for privacy consent if needed (implicitly handled by global error message, but could add specific one here) */}
@@ -703,9 +703,9 @@ export default function FeedbackForm() {
                             type="submit"
                             disabled={loading}
                             className={`w-full py-4 rounded-xl font-bold text-lg text-white transition-all duration-300 transform 
-                         shadow-lg hover:shadow-xynexis-green/20 ${loading
+                         shadow-lg hover:shadow-ignite-green/20 ${loading
                                     ? 'bg-gray-600 cursor-not-allowed opacity-75'
-                                    : 'bg-gradient-to-r from-xynexis-green to-xynexis-green-hover hover:scale-[1.02] active:scale-[0.98]'
+                                    : 'bg-gradient-to-r from-ignite-green to-ignite-green-hover hover:scale-[1.02] active:scale-[0.98]'
                                 } mb-6`}
                         >
                             {loading ? (
@@ -727,10 +727,10 @@ export default function FeedbackForm() {
                         </button>
 
                         {/* Footer Note */}
-                        <div className="pt-12 text-center border-t border-gray-700/50">
+                        <div className="pt-12 text-center border-t border-gray-200/50">
                             <p className="text-gray-500 text-sm">
                                 We would love to hear your feedback so that we can provide a better experience at the next{' '}
-                                <span className="text-xynexis-green font-semibold">Webinar Series</span>.
+                                <span className="text-ignite-green font-semibold">Webinar Series</span>.
                             </p>
                         </div>
                     </form>
