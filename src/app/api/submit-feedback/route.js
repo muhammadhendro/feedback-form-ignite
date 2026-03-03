@@ -123,7 +123,7 @@ export async function POST(request) {
 
     if (insertError) {
       console.error('Error inserting feedback:', insertError);
-      throw insertError;
+      return Response.json({ error: `DB Error: ${insertError.message}` }, { status: 500 });
     }
 
     // 5. Log submission for rate limiting

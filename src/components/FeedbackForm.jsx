@@ -230,9 +230,7 @@ export default function FeedbackForm() {
                 body: JSON.stringify({
                     token: csrfToken,
                     formData: {
-                    formData: {
                         ...formData
-                    }
                     }
                 })
             });
