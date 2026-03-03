@@ -27,7 +27,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://xynexis.com https://*.xynexis.com http://localhost:3000;"
+            value: "frame-ancestors 'self' https://xynexis.com https://*.xynexis.com https://ignitetech.co.id/ https://*.ignitetech.co.id/ http://localhost:3000;"
           }
         ]
       }
