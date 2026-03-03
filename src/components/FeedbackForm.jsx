@@ -177,10 +177,6 @@ export default function FeedbackForm() {
             errors.email = 'Invalid email address';
         }
 
-        if (!formData.privacy_consent) {
-            errors.privacy_consent = 'You must agree to the privacy policy';
-        }
-
         const requiredOptions = [
             'opt_materi_kesesuaian', 'opt_trainer_kemampuan', 'opt_materi_kualitas',
             'opt_metode_penyampaian', 'opt_fasilitas_media', 'opt_efektivitas_penyampaian',
