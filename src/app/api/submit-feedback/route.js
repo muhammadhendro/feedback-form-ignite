@@ -158,7 +158,7 @@ export async function POST(request) {
   } catch (error) {
     console.error('Error in submit-feedback:', error);
     return Response.json(
-      { error: 'Failed to submit feedback' },
+      { error: error.message || 'Failed to submit feedback. Check your environment variables in Vercel.' },
       { status: 500 }
     );
   }
