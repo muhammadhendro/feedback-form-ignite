@@ -77,8 +77,7 @@ export default function FeedbackForm() {
         ur_kritik_saran: '',
         ur_hal_baik: '',
         ur_saran_selanjutnya: '',
-        ur_kebutuhan_topik: '',
-        privacy_consent: false
+        ur_kebutuhan_topik: ''
     });
 
     const [loading, setLoading] = useState(false);
@@ -272,10 +271,8 @@ export default function FeedbackForm() {
                 ur_kritik_saran: '',
                 ur_hal_baik: '',
                 ur_saran_selanjutnya: '',
-                ur_kebutuhan_topik: '',
-                privacy_consent: false
+                ur_kebutuhan_topik: ''
             });
-            
             // Fetch new token for next submission
             const tokenResponse = await fetch('/api/get-feedback-token', {
                 method: 'GET',
@@ -639,32 +636,6 @@ export default function FeedbackForm() {
                             </div>
                         </div>
 
-                        {/* Privacy Consent */}
-                        <div className="pt-0 pb-1">
-                            <label className="flex items-start gap-3 cursor-pointer group">
-                                <div className="relative flex items-center mt-0.5">
-                                    <input
-                                        type="checkbox"
-                                        name="privacy_consent"
-                                        checked={formData.privacy_consent}
-                                        onChange={handleChange}
-                                        className="peer sr-only"
-                                    />
-                                    <div className={`w-5 h-5 rounded border border-gray-300 bg-white 
-                                    peer-checked:bg-ignite-green peer-checked:border-ignite-green 
-                                    transition-all duration-200 shadow-sm group-hover:border-gray-500`}></div>
-                                    <svg className="absolute w-3.5 h-3.5 text-white left-0.5 top-0.5 opacity-0 peer-checked:opacity-100 transition-opacity duration-200 pointer-events-none" 
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <span className={`text-sm select-none transition-colors duration-200 ${formData.privacy_consent ? 'text-gray-200' : 'text-gray-600'}`}>
-                                    I agree to the <a href="https://xynexis.com/privacy-notice/" target="_blank" rel="noopener noreferrer" className="text-ignite-green hover:underline">Privacy Notice</a> and consent to having my data processed.
-                                </span>
-                            </label>
-                            {/* Error for privacy consent if needed (implicitly handled by global error message, but could add specific one here) */}
-                        </div>
-
                         {/* Submit Button */}
                         <button
                             type="submit"
@@ -693,13 +664,6 @@ export default function FeedbackForm() {
                             )}
                         </button>
 
-                        {/* Footer Note */}
-                        <div className="pt-12 text-center border-t border-gray-200/50">
-                            <p className="text-gray-500 text-sm">
-                                We would love to hear your feedback so that we can provide a better experience at the next{' '}
-                                <span className="text-ignite-green font-semibold">Webinar Series</span>.
-                            </p>
-                        </div>
                     </form>
                 </div>
             </div>
